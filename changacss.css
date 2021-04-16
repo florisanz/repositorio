@@ -1,0 +1,494 @@
+  /*Consultas y problemas:
+  1/ el nav sigue sin funcionar aunque le saque esas lineas
+  2/ el align stretch tiene dos problemas en el index no funciona ni aunque le saque el background-size ya que lo repite
+  y el otro es que no es proporcional el estiramiento entonces se deforma la imagen.
+ 3/ En eventos y contactos tengo margen de izq y derecha y esta igual planteada la grid, no se cual es el problema. 
+ 4/ en todas me sobra pagina para la derecha y para abajo, estoy planteando mal las medidas? cuales serian?
+ 5/ eventos y productos aun esta mal, luego lo modifico. 
+ 6/ linea 446, no se como hacer tampoco para que lo naranja ocupe todo el lugar del grid.
+ 7/ linea 473 no me aparece la seccion 3.
+ */
+
+
+   /* para todas */
+@font-face {
+    font-family: "Antique";
+    src: url("antique.ttf");
+}
+.logo {
+    width: 160px;
+    height: 30px;
+    color: none;
+    position: absolute;
+    top: 20px;
+    left: 25px;
+}
+
+#menu  {
+	position: absolute;
+    top: 300px;
+    left: 25px;
+    background: black;
+    font-family: "Antique";
+    font-size: 12PX;
+    font-kerning: 10PX;
+    line-height: 16px;
+}
+#menu {
+	color: white;
+}
+#menu:hover {
+	color: #2e2abc;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.nav {  
+   	grid-area: "nav";
+	background-color: black;
+} 
+
+/* index */
+.grid {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 200px 340px 340px 340px 340px;
+    grid-template-rows: 240px 240px 240px;
+    grid-template-areas: "nav pizza1 texto1 horno horno"  
+                         "nav pizza1 pizza2 flama flama"  
+                         "nav pizza3 empanada libre pizza4";
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+}
+
+.parte1 {
+	background-image: url("./imagenes/img-index/1.jpg");
+	grid-area: pizza1;
+	background-size: cover;
+	position: center;
+	transition: all 5s;
+    align-self: stretch;
+
+}
+.parte2 {
+	background-image: url("./imagenes/img-index/2.jpg");
+	grid-area: texto1;
+	background-size: cover;
+	position: center;
+	align-self: stretch;
+}
+.parte3 {
+	background-image: url("./imagenes/img-index/3.jpg");
+	grid-area: horno;
+	background-size: cover;
+	position: center;
+	align-self: stretch;
+}
+.parte4 {
+	background-image: url("./imagenes/img-index/4.jpg");
+	grid-area: pizza2;
+	background-size: cover;
+	position: center;
+}
+.parte5 {
+	background-image: url("./imagenes/img-index/5.jpg");
+	grid-area: flama;
+	background-size: cover;
+	position: center;
+	}
+.parte6 {
+	background-image: url("./imagenes/img-index/6.jpg");
+	grid-area: pizza3;
+	background-size: cover;
+	position: center;
+}
+.parte7 {
+	background-image: url("./imagenes/img-index/7.jpg");
+	grid-area: empanada;
+	background-size: cover;
+	position: center;
+	align-self: stretch;
+}
+.parte8 {
+	background-image: linear-gradient(to right, #ff4200 , #2e2abc);
+	grid-area: libre;
+	background-size: cover;
+	position: center;
+	align-self: stretch;
+}
+.parte9 {
+	background-image: url("./imagenes/img-index/9.jpg");
+	grid-area: pizza4;
+	background-size: cover;
+	position: center;
+	align-self: stretch;
+}
+.what {
+	position: relative;
+	top: 600px;
+	left:400px;
+	color: white;
+	font-family: "Antique";
+}
+.parte9:hover {
+   transform: rotate(45deg);
+}
+.what:hover {
+	transform:translate(50px);
+}
+.parte1:hover {
+	width: 105%;
+	height: 105%;
+}
+.what {
+   animation-duration: 4s;
+   animation-name: opacidad;
+}
+
+@keyframes opacidad {
+   0% {
+     opacity: 0;
+   }
+   100% {
+     opacity: 1;
+   }
+}
+
+/* fin de index*/ 
+
+/*servicio*/
+#servicios_fondo {
+    position: absolute;
+	top: 0px;
+	left: 0px;
+	display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 200px 650px 650px;
+    grid-template-rows: repeat(5,150px);
+    grid-template-areas: "nav piza-manos carro"
+                         "nav piza-manos carro"
+                         "nav principal info"
+                         "nav principal horno"
+                         "nav principal horno";
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+.principal {
+grid-area: principal;
+background-color: #2e2abc;
+background-size: cover;
+
+}
+
+.carro {
+	grid-area: carro;
+	background-color:#ff4200; 
+	align-self: stretch;
+	   
+    }
+.horno {
+	grid-area: horno;
+	align-self: stretch;
+}
+.piza-manos {
+	grid-area: piza-manos;
+	align-self: stretch;
+}
+.seccion1{
+	position: absolute;
+	top: 300px;
+	left:300px;
+	color: white;
+	font-family: antique;
+	font-size: 50px;
+	background-color: #2e2abc;
+}
+.parrafoservicio {
+	position: absolute;
+	top: 400px;
+	left:400px;
+	color: white;
+	width: 300px;
+	font-family: open sans;
+	font-size: 16px;
+	text-align: center; 
+}
+.pregunta {
+	position: absolute;
+	font-family: antique;
+	text-align: center;
+	text-decoration: overline;
+	font-size: 30px;
+	left:400px;
+	top: 480px;
+	color: white;
+	width: 300px
+}
+.respuesta {
+	font-family: open sans;
+	font-size: 16px;
+	text-align: center; 
+	position: absolute;
+	top:570px;
+	left:400px;
+	color: white;
+	width: 300px
+}
+.info_div {
+    grid-area: info;
+	background-color: #ff4200;
+	font-family: open sans;
+	font-size: 16px;
+	color: white;
+	background-size: cover;
+	padding: 30px;
+
+}
+/* fin de seccion servicio*/
+
+/*productos*/
+#productos_fondo {
+    position: absolute;
+	top: 0px;
+	left: 0px;
+	display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 200px 200px 200px 200px 200px;
+    grid-template-rows: 400px 400px;
+    grid-template-areas: "nav naranja naranja naranja empas empas" 
+                         "nav piza piza piza amarillo amarillo";
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.seccion2 {
+	grid-area: empas;
+	font-family: antique;
+	font-size: 50px;
+	color: white;
+	background-image: url("./imagenes/img-productos/empa.png");
+}
+ .pizas {
+ 	grid-area: piza;
+}
+ .titulos_tabla {
+ 	font-family: antique;
+ 	font-size: 18px;
+}
+.tabla{ 
+    grid-area: naranja;
+    background-color: #ff4200;
+    font-weight: bold;
+    font-family: open sans;
+    font-size: 12px;
+    color: white;
+	width: auto;
+	height: auto;
+	background-size: cover;
+}
+table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  border: 1px solid white;
+  text-align: center;
+}
+.amarillo1 {
+	grid-area: amarillo;
+	background-color: #f5b20c;
+}
+th, td {
+  padding: 10px;
+}
+/* contacto*/
+#contacto_fondo {
+    position: absolute;
+	top: 0px;
+	left: 0px;
+	display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 200px 340px 340px 310px 310px;
+    grid-template-rows: 400px 400px;
+    grid-template-areas: "nav formulario formulario formulario redondo" 
+                         "nav napo napo contacto contacto";
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+}
+
+.napo {
+	grid-area: napo;
+	align-self: stretch;
+}
+.redondo {
+	grid-area: redondo;
+	align-self: stretch;
+}
+.escribinos {
+	font-family: Antique;
+	display: inline-block:;
+	position: absolute;
+	top: 50px;
+	left:380px;
+	color: white;
+	width: 300px;
+}
+.amarillo {
+	grid-area: formulario; 
+	background-color: #f5b20c;
+	background-size: cover;
+	position: center;
+	margin: 0px;
+}
+form {
+	border-color: transparent;
+	font-family: open sans, bold;
+	font-size: 14px;
+	line-height: 26px;
+	position: absolute;
+	top: 165px;
+	left:250px;
+	color: white;
+	width:500px;
+	margin:auto;
+}
+input {
+	border-color: transparent;
+    width: 600px;
+    background-color: white;
+    outline: none;
+    border-radius: 200px;
+    height: 20px;
+}
+textarea {
+    border-color: transparent;
+    background   : rgba(0,0,0,.1);
+    outline: none;
+    display : inline-block;
+    padding : 10px;
+    margin  : 10px 0 0 -10px;
+    width   : 340px;
+    height  : 360px;
+    border-radius: 500px;
+    resize  : none;
+    overflow: auto;
+}
+.flex {
+    grid-area: contacto;
+	color: white;	
+	font-family: open sans;
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px;
+	background-color: #2e2abc;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: space-between;
+}
+.seccion4  { 
+	font-family: antique;
+	font-size: 50px;
+	position: absolute;
+	top: 20px;
+	left:250px;
+	color: white;
+}
+.borrar { 
+	background-color: #ff4200;
+	font-family: antique;
+	color: white;
+}
+
+.enviar {
+	background-color: #fc4404;
+	font-family: antique;
+	color: white;
+	
+}
+/* fin de seccion contacto */
+
+/* eventos */ 
+#eventos_fondo {
+  	position: absolute;
+	top: 0px;
+	left: 0px;
+	display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 200px repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: 200px 200px 350px;
+    grid-template-areas: "nav hemos  hemos hemos bombo"   
+                         "nav murga murga fuego bombo"
+                         "nav presupuesto presupuesto dj dj";
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+}
+.hemos {
+	grid-area: hemos;
+    font-family: open sans, italic;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	color: white;
+	background-color: #ff4200;
+	background-size: cover; 
+}
+.musiques {
+	grid-area: presupuesto;
+	font-family: open sans, bold;
+	position: absolute;
+	text-align: center;
+	color: white;
+	background-color: #ff4200;
+	align-self: stretch; 
+	}
+.dj{
+	grid-area: dj;
+	align-self: stretch;
+}
+.bombo {
+	grid-area: bombo;
+	align-self: stretch;
+}
+.murga {
+	grid-area: murga;
+	align-self: stretch;
+}
+.fuego{
+	grid-area: fuego;
+	background-color:#2e2abc;
+	align-self: stretch;
+}
+.seccion3 {
+	grid-area: dj;
+	font-family: antique;
+	font-size: 50px;
+	color: white;
+}
+button {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    position: absolute;
+    top: 650px;
+    left: 350px;
+    color: white;
+    background-color: #ff4200;
+    font-family: antique;
+
+/* fin de seccion eventos */
